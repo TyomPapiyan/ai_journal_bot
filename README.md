@@ -9,7 +9,7 @@ A Telegram bot for personal journaling with AI-powered mood analysis. Write abou
 
 Личный AI-дневник в Telegram с поддержкой трёх языков: 🇷🇺 Русский, 🇦🇲 Հայերեն, 🇬🇧 English.
 
-🤖 Попробуй бота: t.me/myjornalAI_bot
+🤖 Попробуй бота: https://t.me/myjornalAI_bot
 
 ---
 
