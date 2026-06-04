@@ -294,7 +294,9 @@ async def unknown_message(message: Message):
     await message.answer(get_msg(lang, "fallback"), reply_markup=main_menu(lang))
 
 @router.error()
-async def error_handler(event, exception: Exception):
-    if isinstance(exception, TelegramForbiddenError):
+
+@router.error()
+async def error_handler(event) -> bool:
+    if isinstance(event.exception, TelegramForbiddenError):
         return True
-    raise exception
+    return False
