@@ -7,8 +7,8 @@ from aiogram.enums import ParseMode
 from aiogram.client.default import DefaultBotProperties
 from dotenv import load_dotenv
 
-from database import init_db
-from bot import router
+from ai_journal_bot.database import init_db
+from ai_journal_bot.bot import router
 
 load_dotenv()
 
