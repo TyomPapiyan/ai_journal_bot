@@ -84,3 +84,35 @@ def get_entry_count(user_id: int) -> int:
             "SELECT COUNT(*) as cnt FROM entries WHERE user_id = ?", (user_id,)
         ).fetchone()
         return row["cnt"] if row else 0
+
+def get_entries_by_date(user_id: int, date: str):
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute(
+        "SELECT * FROM entries WHERE user_id = ? AND DATE(created_at) = ?",
+        (user_id, date)
+    )
+    rows = cursor.fetchall()
+    conn.close()
+    return rows
+
+def set_user_language(user_id: int, language: str):
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute(
+        "UPDATE users SET language = ? WHERE user_id = ?",
+        (language, user_id)
+    )
+    conn.commit()
+    conn.close()
+
+def get_user_language(user_id: int):
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute(
+        "SELECT language FROM users WHERE user_id = ?",
+        (user_id,)
+    )
+    row = cursor.fetchone()
+    conn.close()
+    return row[0] if row else "ru"
