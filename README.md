@@ -43,7 +43,6 @@ ai_journal_bot/
 ├── .env                  # Secret keys (not tracked by Git)
 ├── .gitignore
 ├── main.py               # Application entry point
-├── Dockerfile            # Docker container configuration
 ├── bot/
 │   ├── __init__.py
 │   ├── handlers.py       # All Telegram bot handlers
